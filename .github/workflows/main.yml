@@ -2,11 +2,10 @@ name: Update EC2 /manifest from GitHub
 
 on:
   push:
+    branches: [main]
     paths:
       - 'manifest/**'
-    branches:
-      - main
-
+      - '.github/workflows/**'
 jobs:
   deploy:
     runs-on: ubuntu-latest
