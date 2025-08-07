@@ -1,4 +1,4 @@
-#check new version of the app
+#check new version of the app check pods
 apiVersion: v1
 kind: Pod
 metadata:
