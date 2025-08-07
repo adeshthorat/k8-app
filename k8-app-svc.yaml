@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: k8-pyapp
+  labels:
+    app: k8-pyapp
+spec:
+  selector:
+    app: k8-pyapp
+  type: NodePort
+  ports:
+    - port: 5000
+      targetPort: 5000
