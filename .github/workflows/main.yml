@@ -2,8 +2,8 @@ name: Sync Manifest to EC2
 
 on:
   push:
-    #paths:
-     # - 'manifest/**'  # Trigger only when /manifest folder is updated
+    paths:
+      - 'manifest/**'  # Trigger only when /manifest folder is updated
     branches:
       - main
 
