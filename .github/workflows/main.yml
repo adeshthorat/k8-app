@@ -1,0 +1,35 @@
+name: Update EC2 /manifest from GitHub
+
+on:
+  push:
+    paths:
+      - 'manifest/**'
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Copy updated files to EC2
+      uses: appleboy/scp-action@v0.1.4
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_SSH_KEYS }}
+        source: "manifest/"
+        target: "/home/adesh/manifest"
+
+    - name: SSH into EC2 and confirm deployment
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          echo "Deployment done at $(date)"
+          ls -l /home/adesh/manifest
