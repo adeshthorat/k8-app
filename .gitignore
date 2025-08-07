@@ -1,2 +1,2 @@
-./github/workflows/*
+./github/workflows/docker-build.yml
 call_nodeport.py
