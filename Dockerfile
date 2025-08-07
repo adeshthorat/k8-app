@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY k8app.py .
 
-CMD ["python", "app.py"]
+CMD ["python", "k8app.py"]
