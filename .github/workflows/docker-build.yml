@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "src/**"
+      - 'src/**'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,5 +14,5 @@ jobs:
       - name: Build & Push Image
         run: |
           echo "${{secrets.DOCKER_PASS }}" | docker login -u "adesh0303" --password-stdin
-          docker image build -t adesh0303/k8-app:v3 .
+          docker image build -t adesh0303/k8-app:v3 ./src
           docker push adesh0303/k8-app:v3
