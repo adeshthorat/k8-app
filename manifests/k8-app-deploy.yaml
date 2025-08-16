@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
         - name: k8-pyapp
-          image: adesh0303/k8-app:v2
+          image: adesh0303/k8-app:v3
           ports:
             - containerPort: 5000
+            

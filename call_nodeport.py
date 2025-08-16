@@ -1,6 +1,7 @@
 import requests
 import time
 import threading
+import subprocess
 
 def keep_requesting(url):
     print(f"📡 Sending requests to {url}. Press ENTER to stop.")
@@ -25,8 +26,7 @@ def keep_requesting(url):
     print("🛑 Stopped sending requests.")
 
 if __name__ == "__main__":
-    node_ip = input("Enter Node IP: ").strip()
     node_port = input("Enter NodePort: ").strip()
-
+    node_ip = subprocess.getoutput("minikube ip")
     url = f"http://{node_ip}:{node_port}"
     keep_requesting(url)

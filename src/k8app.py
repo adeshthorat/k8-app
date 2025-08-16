@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-    return jsonify({"message": "Welcome to Python API v2 test"   ,"status": "running"})
+    return jsonify({"message": "Servicec are Up.....","status": "running"})
 
 @app.route('/hello/<name>', methods=['GET'])
 def hello(name):
